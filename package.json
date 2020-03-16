@@ -1,0 +1,19 @@
+{
+  "name": "perlinnoise",
+  "version": "1.0.0",
+  "description": "Perlin Noise teture on cube face",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medha-juneja/PerlinNoise.git"
+  },
+  "author": "Medha Juneja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medha-juneja/PerlinNoise/issues"
+  },
+  "homepage": "https://github.com/medha-juneja/PerlinNoise#readme"
+}
