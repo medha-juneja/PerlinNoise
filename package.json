@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/medha-juneja/PerlinNoise/issues"
   },
-  "homepage": "https://github.com/medha-juneja/PerlinNoise#readme"
+  "homepage": "https://github.com/medha-juneja/PerlinNoise#readme",
+  "devDependencies": {
+    "mocha": "^7.1.0"
+  }
 }
