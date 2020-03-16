@@ -18,5 +18,8 @@
   "homepage": "https://github.com/medha-juneja/PerlinNoise#readme",
   "devDependencies": {
     "mocha": "^7.1.0"
+  },
+  "dependencies": {
+    "three": "^0.114.0"
   }
 }
