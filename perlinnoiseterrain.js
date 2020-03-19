@@ -9,22 +9,42 @@ controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 camera.position.z = 5;
 
+var light = new THREE.AmbientLight( 0x1743a3 ); // navy color light
+scene.add( light );
+
+light2 = new THREE.PointLight( 0xffcc77, 1.0);
+scene.add(light2);
+light2.position.z = 3;
+light2.position.x = 4;
+light2.position.y = 2;
+
 var plane_geometry = new THREE.PlaneGeometry(5,5,99,99);
 var plane = new THREE.SceneUtils.createMultiMaterialObject( 
-                plane_geometry, [new THREE.MeshBasicMaterial({color: 0x666666})
+                plane_geometry, [new THREE.MeshPhongMaterial({color: 0x3f7b9d, specular: 0xedf2fa, flatShading: 1, shininess: 2})
         ]);
 
 scene.add(plane);
 
+function octave(noise, nx,ny,numOctaves, planewidth, planeheight){
+    let val = 0;
+    let freq = 0;
+    let max = 0;
+    let amp = 0.5;
+    for(let i=0; i < numOctaves; i++) {
+        val += noise.perlin2((nx+freq)/planewidth,ny/planeheight)*amp;
+        max += amp;
+        amp /= 2;
+        freq  += 200;
+        planewidth /= 2;
+        planeheight /=2;
+    }
+    return val/max;
+}
+
 noise.seed(Math.random());
 for(var i=0;i<100;i++) {
   for(var j=0;j<100;j++) {
-    var ex = 0.5;
-    plane_geometry.vertices[i+j*100].z = (noise.perlin2(i/100,j/100)+(noise.perlin2((i+200)/50,j/50)*Math.pow(ex,1))+(noise.perlin2((i+400)/25,j/25)*Math.pow(ex,2))+
-      (noise.perlin2((i+600)/12.5,j/12.5)*Math.pow(ex,3))+
-+
-      (noise.perlin2((i+800)/6.25,j/6.25)*Math.pow(ex,4))                                 
-                                )/2;
+    plane_geometry.vertices[i+j*100].z = octave(noise, i, j, 5, 100,100)
   }
 }
 
