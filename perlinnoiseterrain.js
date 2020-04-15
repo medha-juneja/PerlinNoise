@@ -78,6 +78,7 @@ function setPlane(axis, angle) {
 var group = new THREE.Group();
 group.add(perlinplane)
 scene.add(group)
+group.scale.set(1.5, 1.5, 1.5)
 
 setPlane("y",  Math.PI * 0.5); //px
 setPlane("x", -Math.PI * 0.5); //nx
