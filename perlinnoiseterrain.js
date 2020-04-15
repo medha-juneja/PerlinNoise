@@ -10,8 +10,8 @@ controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 camera.position.z = 5;
 
-var light = new THREE.AmbientLight( 0x1743a3 );
-scene.add( light );
+var light1 = new THREE.AmbientLight( 0x1743a3 );
+scene.add( light1 );
 
 light2 = new THREE.PointLight( 0xffcc77, 1.0);
 scene.add(light2);
@@ -21,14 +21,22 @@ light2.position.y = 2;
 // var plh2 = new THREE.PointLightHelper(light2,1);
 // scene.add(plh2);
 
-var light = new THREE.PointLight( 0xffcc77, 1);
-scene.add(light);
-light.position.z = 0;
-light.position.x = -3;
-light.position.y = 1;
+var light3 = new THREE.PointLight( 0xffcc77, 1);
+scene.add(light3);
+light3.position.z = 0;
+light3.position.x = -3;
+light3.position.y = 1;
 
-// var plh = new THREE.PointLightHelper(light,1);
+// var plh = new THREE.PointLightHelper(light3,1);
 // scene.add(plh);
+
+var light4 = new THREE.PointLight( 0xffcc77, 1);
+scene.add(light4);
+light4.position.z = 5;
+light4.position.x = 0;
+light4.position.y = 0;
+// var plh3 = new THREE.PointLightHelper(light4,1);
+// scene.add(plh3);
 
 var plane_geometry = new THREE.PlaneGeometry(1,1,99,99);
 plane_geometry.translate(0,0,0.5)
