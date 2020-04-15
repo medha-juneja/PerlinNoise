@@ -1,0 +1,30 @@
+{
+  "name": "perlinnoise",
+  "version": "1.0.0",
+  "description": "Perlin noise displacement of top face of cube",
+  "dependencies": {
+    "http-server": "^0.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server -a localhost -p 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medha-juneja/PerlinNoise.git"
+  },
+  "keywords": [
+    "perlin",
+    "noise",
+    "simplex",
+    "cube",
+    "displacement"
+  ],
+  "author": "Medha Juneja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medha-juneja/PerlinNoise/issues"
+  },
+  "homepage": "https://github.com/medha-juneja/PerlinNoise#readme"
+}
